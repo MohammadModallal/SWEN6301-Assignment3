@@ -23,21 +23,17 @@ public class Driver {
 	 * Creates a sample patient info and store them on internal storage.
 	 */
 	public static void createRandomPatientInfo() {
-		String firstName = RandomUtils.randomIdentifier();
-		String middleName = RandomUtils.randomIdentifier();
-		String lastName = RandomUtils.randomIdentifier();
-		int age = RandomUtils.randomNumber(150);
-		int weight = RandomUtils.randomNumber(400);
-		String sex = RandomUtils.randomSexString();
-		int height = RandomUtils.randomNumber(300);
-		boolean organDonor = RandomUtils.randomBoolean();
-		String bloodType = RandomUtils.randomBloodType();
-		boolean success = PersistenceUtils.storePatientInfo(firstName, middleName, lastName, age, weight, sex, height, organDonor, bloodType);
-		if(success) {
-			System.out.println("Patient [" + firstName + ", " + lastName + "] has been successfully processed!");
-		} else {
-			System.out.println("An error occurred while processing info for patient [" + firstName + ", " + lastName + "]!");
-		}
+		PatientBuilder patientBuilder=new NPatientBuilder();
+		patientBuilder.assignFirstName();
+		patientBuilder.assignMiddleName();
+		patientBuilder.assignlastName();
+		patientBuilder.assignAge();
+		patientBuilder.assignWeight();
+		patientBuilder.assignHight();
+		patientBuilder.assignSex();
+		patientBuilder.assignBloodType();
+		System.out.println(patientBuilder.toString()); 
+		
 	}
 	
 }
