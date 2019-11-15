@@ -74,14 +74,14 @@ public final class ValidationUtils {
 		}
 		
 		// Check whether bloodType is either A+, A-, B+, B-, O+, O-, AB+, AB-, or 'none'.
-		if("a+".equals(bloodType.toLowerCase()) &&
-				"a-".equals(bloodType.toLowerCase()) &&
-				"b+".equals(bloodType.toLowerCase()) &&
-				"b-".equals(bloodType.toLowerCase()) &&
-				"ab+".equals(bloodType.toLowerCase()) && 
-				"ab-".equals(bloodType.toLowerCase()) &&
-				"o+".equals(bloodType.toLowerCase()) &&
-				"o-".equals(bloodType.toLowerCase())) {
+		if(BloodTypesEnum.A_PLUS.toString().equals(bloodType.toLowerCase()) &&
+				BloodTypesEnum.A_MINUS.toString().equals(bloodType.toLowerCase()) &&
+				BloodTypesEnum.B_PLUS.toString().equals(bloodType.toLowerCase()) &&
+				BloodTypesEnum.B_MINUS.toString().equals(bloodType.toLowerCase()) && 
+				BloodTypesEnum.AB_PLUS.toString().equals(bloodType.toLowerCase()) &&
+				BloodTypesEnum.AB_MINUS.toString().equals(bloodType.toLowerCase()) &&
+				BloodTypesEnum.O_PLUS.toString().equals(bloodType.toLowerCase()) &&
+				BloodTypesEnum.O_MINUS.toString().equals(bloodType.toLowerCase())) {
 			throw new IllegalArgumentException("Blood type can be either A+, A-, B+, B-, O+, O-, AB+, AB-, or 'none' in case the patient does not her blood type.");
 		}
 		
